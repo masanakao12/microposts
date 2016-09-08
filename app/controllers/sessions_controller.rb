@@ -1,6 +1,24 @@
 class SessionsController < ApplicationController
   def new
   end
+  
+  def show
+   @user = User.find(params[:id])
+ end
+ 
+  def edit
+  end
+  
+  def update
+  @user = User.find(params[:id])
+   if @message.update(message_params)
+     # 保存に成功した場合はトップページへリダイレクト
+     redirect_to user_path(@user) , notice: 'プロフィールを更新しました'
+   else
+     # 保存に失敗した場合は編集画面へ戻す
+     render 'edit'
+   end
+ end
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
