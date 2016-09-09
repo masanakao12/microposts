@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
   end
-<<<<<<< HEAD
   
   def show
    @user = User.find(params[:id])
@@ -20,8 +19,6 @@ class SessionsController < ApplicationController
      render 'edit'
    end
  end
-=======
->>>>>>> user-profile
 
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
