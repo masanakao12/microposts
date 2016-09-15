@@ -1,7 +1,7 @@
 <h1>フォロワー一覧</h1>
   <% @followers.each do |user| %>
      <div class="row">
-      <%= gravatar_for(user, size: 50) %>
-      <%= user.name %>
+      <%= link_to gravatar_for(user, size: 50), user %>
+      <%= link_to user.name, user %>
     </div>
 <% end %>
